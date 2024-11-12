@@ -26,6 +26,4 @@ task("build") {
     dependsOn "test", "combineTypeScriptGeneratedJs", "copyHtml"
 }
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '1.10'
-}
+
