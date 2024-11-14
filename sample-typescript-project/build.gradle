@@ -25,5 +25,5 @@ task("build") {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '1.10'
+    gradleVersion = '7.6'
 } // Closing brace for the wrapper task
