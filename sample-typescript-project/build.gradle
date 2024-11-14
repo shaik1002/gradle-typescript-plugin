@@ -24,6 +24,7 @@ task("build") {
     dependsOn "test", "combineTypeScriptGeneratedJs", "copyHtml"
 }
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '7.6'
-} // Closing brace for the wrapper task
+// Remove or rename this task if it already exists
+// task wrapper(type: Wrapper) {
+//     gradleVersion = '7.6'
+// }
