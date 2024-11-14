@@ -1,6 +1,5 @@
 apply plugin: 'typescript'
 
-
 buildscript {
     repositories {
         mavenLocal()
@@ -15,7 +14,6 @@ typescript {
     combineJsModules = ["calculator"]
 }
 
-
 task("copyHtml", type: Copy) {
     from "src/main/html"
     include "*.html"
@@ -28,4 +26,4 @@ task("build") {
 
 task wrapper(type: Wrapper) {
     gradleVersion = '1.10'
-}
+} // Closing brace for the wrapper task
