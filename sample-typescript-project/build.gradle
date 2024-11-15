@@ -1,30 +1,22 @@
-apply plugin: 'typescript'
-
-buildscript {
-    repositories {
-        mavenLocal()
-        mavenCentral()
-    }
-    dependencies {
-        classpath group: 'at.irian.typescript', name: 'gradle-typescript-plugin', version: '0.12'
-    }
+plugins {
+    id 'java'
+    id 'application'
 }
 
-typescript {
-    combineJsModules = ["calculator"]
+repositories {
+    mavenCentral()
 }
 
-task("copyHtml", type: Copy) {
-    from "src/main/html"
-    include "*.html"
-    into project.buildDir
+dependencies {
+    implementation 'com.google.guava:guava:32.1.1-jre'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.3'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.3'
 }
 
-task("build") {
-    dependsOn "test", "combineTypeScriptGeneratedJs", "copyHtml"
+application {
+    mainClass = 'com.example.Main'
 }
 
-// Remove or rename this task if it already exists
-// task wrapper(type: Wrapper) {
-//     gradleVersion = '7.6'
-// }
+test {
+    useJUnitPlatform()
+}
